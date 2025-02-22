@@ -11,7 +11,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		267F05922D694818007E7544 /* Fructus */ = {
+		267F05BC2D6A7DA5007E7544 /* Fructus */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Fructus;
 			sourceTree = "<group>";
@@ -32,7 +32,7 @@
 		267F05872D694818007E7544 = {
 			isa = PBXGroup;
 			children = (
-				267F05922D694818007E7544 /* Fructus */,
+				267F05BC2D6A7DA5007E7544 /* Fructus */,
 				267F05912D694818007E7544 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,7 +61,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				267F05922D694818007E7544 /* Fructus */,
+				267F05BC2D6A7DA5007E7544 /* Fructus */,
 			);
 			name = Fructus;
 			packageProductDependencies = (

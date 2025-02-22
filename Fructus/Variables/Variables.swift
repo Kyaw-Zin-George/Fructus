@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+let blueBerry = "blueberry"
+let colorLightBlueberry = "ColorBlueberryLight"
+let colorDarkBlueberry = "ColorBlueberryDark"
