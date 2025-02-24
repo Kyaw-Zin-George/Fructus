@@ -10,7 +10,7 @@ import SwiftUI
 struct FruitCardView: View {
     
     //MARK: Properties
-    
+    @State private var isAnimating : Bool = false
     //MARK: Body
     var body: some View {
         ZStack {
@@ -22,6 +22,7 @@ struct FruitCardView: View {
                     .resizable()
                     .scaledToFit()
                     .shadow(color:.black, radius: 6, x: 6, y: 8)
+                    .scaleEffect(isAnimating ? 1.0: 0.6)
                 //Fruit: Title
                 Text("Blueberry")
                     .foregroundStyle(.white)
@@ -35,8 +36,14 @@ struct FruitCardView: View {
                     .padding(.horizontal, 16)
                     .frame(maxWidth: 480)
                 //Button: Start
+                StartButtonView()
             }//VStack
         }//ZStack
+        .onAppear {
+            withAnimation(.easeOut(duration: 2)){
+                isAnimating = true
+            }
+        }
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
         .background(LinearGradient(colors: [Color(colorLightBlueberry), Color(colorDarkBlueberry),Color(colorDarkBlueberry)], startPoint: .top, endPoint: .bottom))
     }
