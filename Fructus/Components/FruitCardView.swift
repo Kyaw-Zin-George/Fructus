@@ -46,6 +46,8 @@ struct FruitCardView: View {
         }
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
         .background(LinearGradient(colors: [Color(colorLightBlueberry), Color(colorDarkBlueberry),Color(colorDarkBlueberry)], startPoint: .top, endPoint: .bottom))
+        .clipShape(RoundedRectangle(cornerRadius: 20))
+        .padding(.horizontal, 20)
     }
 }
 
