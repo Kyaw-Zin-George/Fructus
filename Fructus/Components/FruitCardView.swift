@@ -11,6 +11,7 @@ struct FruitCardView: View {
     
     //MARK: Properties
     @State private var isAnimating : Bool = false
+    var fruit: Fruit
     //MARK: Body
     var body: some View {
         ZStack {
@@ -53,5 +54,5 @@ struct FruitCardView: View {
 
 //MARK: Preview
 #Preview {
-    FruitCardView()
+    FruitCardView(fruit: fruitsData[2])
 }
