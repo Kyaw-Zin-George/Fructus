@@ -19,19 +19,19 @@ struct FruitCardView: View {
             
             VStack(spacing: 20) {
                 // Fruit: Image
-                Image(blueBerry)
+                Image(fruit.image)
                     .resizable()
                     .scaledToFit()
                     .shadow(color:.black, radius: 6, x: 6, y: 8)
                     .scaleEffect(isAnimating ? 1.0: 0.6)
                 //Fruit: Title
-                Text("Blueberry")
+                Text(fruit.title)
                     .foregroundStyle(.white)
                     .font(.largeTitle)
                     .fontWeight(.heavy)
                     .shadow(color:Color(red:0, green: 0, blue: 0, opacity: 0.15),radius: 2, x: 2, y: 2)
                 //Fruit: Headline
-                Text("Blueberries are sweet , nutritious and widely popular fruit all over the world.")
+                Text(fruit.headline)
                     .foregroundStyle(.white)
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 16)
@@ -46,7 +46,7 @@ struct FruitCardView: View {
             }
         }
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
-        .background(LinearGradient(colors: [Color(colorLightBlueberry), Color(colorDarkBlueberry),Color(colorDarkBlueberry)], startPoint: .top, endPoint: .bottom))
+        .background(LinearGradient(colors:fruit.gradientColors, startPoint: .top, endPoint: .bottom))
         .clipShape(RoundedRectangle(cornerRadius: 20))
         .padding(.horizontal, 20)
     }
@@ -54,5 +54,5 @@ struct FruitCardView: View {
 
 //MARK: Preview
 #Preview {
-    FruitCardView(fruit: fruitsData[2])
+    FruitCardView(fruit: fruitsData[5])
 }
