@@ -17,6 +17,7 @@ struct FruitDetailView: View {
                 ScrollView(.vertical, showsIndicators: false){
                     VStack(alignment: .center, spacing: 20){
                         //Header
+                        FruitHeaderView(fruit: fruit)
                         VStack(alignment: .leading, spacing: 20) {
                             //Title
                             Text(fruit.title)
@@ -37,12 +38,23 @@ struct FruitDetailView: View {
                             Text(fruit.description)
                                 .multilineTextAlignment(.leading)
                             //Link
+                            SourceLinkView()
+                                .padding(.top, 10)
+                                .padding(.bottom, 40)
+                            
+                            
                         }
                         .padding(.horizontal, 20)
                         .frame(maxWidth: 640, alignment: .center)
                     }
-                }
-            }
+                    
+                }//VStack
+                .navigationTitle(fruit.title)
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar(.hidden)
+                .ignoresSafeArea()
+            }//: Scroll
+            
         }//Navigation
     }
 }
