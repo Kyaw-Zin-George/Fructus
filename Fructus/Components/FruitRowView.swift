@@ -24,6 +24,14 @@ struct FruitRowView: View {
                     LinearGradient(gradient: Gradient(colors: fruit.gradientColors), startPoint: .top, endPoint: .trailing)
                 )
                 .clipShape(RoundedRectangle(cornerRadius: 8))
+            VStack(alignment: .leading){
+                Text(fruit.title)
+                    .font(.title2)
+                    .fontWeight(.bold)
+                Text(fruit.headline)
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            }
         }
     }
 }
