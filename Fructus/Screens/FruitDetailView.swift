@@ -1,0 +1,52 @@
+//
+//  FruitDetailView.swift
+//  Fructus
+//
+//  Created by Kyaw Thant Zin(George) on 3/3/25.
+//
+
+import SwiftUI
+
+struct FruitDetailView: View {
+    //MARK: PROPERTIES
+    var fruit: Fruit
+    //MARK: BODY
+    var body: some View {
+        GeometryReader { geo in
+            NavigationStack{
+                ScrollView(.vertical, showsIndicators: false){
+                    VStack(alignment: .center, spacing: 20){
+                        //Header
+                        VStack(alignment: .leading, spacing: 20) {
+                            //Title
+                            Text(fruit.title)
+                                .font(.largeTitle)
+                                .fontWeight(.heavy)
+                                .foregroundStyle(fruit.gradientColors[1])
+                            //Header
+                            Text(fruit.headline)
+                                .font(.headline)
+                                .multilineTextAlignment(.leading)
+                            //Nutrients
+                            
+                            //Subheadline
+                            Text("Learn more about \(fruit.title)".uppercased())
+                                .fontWeight(.bold)
+                                .foregroundStyle(fruit.gradientColors[1])
+                            //Description
+                            Text(fruit.description)
+                                .multilineTextAlignment(.leading)
+                            //Link
+                        }
+                        .padding(.horizontal, 20)
+                        .frame(maxWidth: 640, alignment: .center)
+                    }
+                }
+            }
+        }//Navigation
+    }
+}
+
+#Preview {
+    FruitDetailView(fruit: fruitsData[0])
+}
