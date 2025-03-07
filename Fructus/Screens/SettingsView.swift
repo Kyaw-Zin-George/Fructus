@@ -27,7 +27,7 @@ struct SettingsView: View {
                                 .scaledToFit()
                                 .frame(width: 40, height: 40)
                                 .clipShape(RoundedRectangle(cornerRadius: 9))
-                            Text("Most of the fruits are low in calories so it is safe to consume them regularly.")
+                            Text(general)
                                 .font(.footnote)
                         }
                     }
