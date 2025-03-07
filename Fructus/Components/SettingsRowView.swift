@@ -8,11 +8,34 @@
 import SwiftUI
 
 struct SettingsRowView: View {
+    var name: String
+    var content: String? = nil
+    var linkeLabel: String? = nil
+    var linkedDestination: String? = nil
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Divider().padding(.vertical, 4)
+            HStack{
+                Text(name).foregroundStyle(.gray)
+                Spacer()
+                if (content != nil) {
+                    Text(content!)
+                }
+                else if (linkeLabel != nil && linkedDestination != nil) {
+                    Link(linkeLabel!, destination: URL(string: linkedDestination!)!)
+                    Image(systemName: "arrow.up.right.square").foregroundStyle(.pink)
+                    
+                }else{
+                    EmptyView()
+                }
+            }
+        }
     }
 }
 
-#Preview {
-    SettingsRowView()
+#Preview("Hidden") {
+    SettingsRowView(name: "App Version", content: "1.1.1")
+}
+#Preview("LinkedLabelRowview"){
+    SettingsRowView(name: "Website", linkeLabel: "SwiftUI Masterclass", linkedDestination: "swiftuimasterclass.com")
 }
