@@ -10,6 +10,7 @@ import SwiftUI
 struct SettingsView: View {
     //MARK: PROPERTIES
     @Environment(\.dismiss) var dismiss
+    @AppStorage("isOnboarding") var isOnboarding : Bool = false
     //MARK: BODY
     var body: some View {
         NavigationStack {
@@ -33,7 +34,32 @@ struct SettingsView: View {
                     }
                     
                     //MARK: SECTION 2
-                    
+                    GroupBox(label:SettingsLabelView(labelText: "Customization", labelImage: "paintbrush")){
+                        Divider().padding(.vertical, 4)
+                        Text("If you wish to restart the Fructus App, please toggle the option below.")
+                            .padding(.vertical,8)
+                            .frame(minHeight:60)
+                            .layoutPriority(1)
+                            .font(.footnote)
+                            .multilineTextAlignment(.leading)
+                        
+                        Toggle(isOn:$isOnboarding){
+                            if isOnboarding {
+                                Text("Restarted".uppercased())
+                                    .fontWeight(.bold)
+                                    .foregroundStyle(.green)
+                            } else {
+                                Text("Restart".uppercased())
+                                    .fontWeight(.bold)
+                                    .foregroundStyle(Color.secondary)
+                            }
+                        }
+                        .padding()
+                        .background(
+                            Color(UIColor.tertiarySystemBackground)
+                                .clipShape(RoundedRectangle(cornerRadius: 8))
+                        )
+                    }
                     //MARK: SECTION 3
                     GroupBox(
                         label: SettingsLabelView(labelText: "Application", labelImage: "apps.iphone")

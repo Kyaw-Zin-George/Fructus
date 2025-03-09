@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct FructusApp: App {
     //onboardingscreen to be visible when app is launched
-    @AppStorage("isOnboarding") var isOnboarding: Bool = true
+    @AppStorage("isOnboarding") var isOnboarding: Bool = false
     var body: some Scene {
         WindowGroup {
             if isOnboarding {
